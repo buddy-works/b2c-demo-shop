@@ -3,6 +3,7 @@
 use Spryker\Shared\Propel\PropelConstants;
 use Spryker\Shared\StorageDatabase\StorageDatabaseConfig;
 use Spryker\Shared\StorageDatabase\StorageDatabaseConstants;
+use Spryker\Shared\SearchElasticsearch\SearchElasticsearchConstants;
 use Spryker\Zed\Propel\PropelConfig;
 
 require 'config_default-ci.php';
@@ -18,3 +19,6 @@ $config[PropelConstants::ZED_DB_PORT] = getenv('POSTGRES_PORT');
 $config[StorageDatabaseConstants::DB_ENGINE] = StorageDatabaseConfig::DB_ENGINE_PGSQL;
 $config[StorageDatabaseConstants::DB_PORT] = getenv('POSTGRES_PORT');
 $config[StorageDatabaseConstants::DB_USERNAME] = 'postgres';
+
+$config[SearchElasticsearchConstants::HOST] = getenv('SPRYKER_SEARCH_HOST');
+$config[SearchElasticsearchConstants::PORT] = getenv('SPRYKER_SEARCH_PORT');
