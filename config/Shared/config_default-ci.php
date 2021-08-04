@@ -107,8 +107,8 @@ $config[SearchElasticsearchConstants::PORT] = 9200;
 
 $config[StorageRedisConstants::STORAGE_REDIS_PERSISTENT_CONNECTION] = true;
 $config[StorageRedisConstants::STORAGE_REDIS_PROTOCOL] = 'tcp';
-$config[StorageRedisConstants::STORAGE_REDIS_HOST] = '127.0.0.1';
-$config[StorageRedisConstants::STORAGE_REDIS_PORT] = 6379;
+$config[StorageRedisConstants::STORAGE_REDIS_HOST] = getenv('STORAGE_REDIS_HOST') ?: '127.0.0.1';
+$config[StorageRedisConstants::STORAGE_REDIS_PORT] = getenv('STORAGE_REDIS_PORT') ?: 6379;
 $config[StorageRedisConstants::STORAGE_REDIS_PASSWORD] = false;
 $config[StorageRedisConstants::STORAGE_REDIS_DATABASE] = 3;
 
@@ -148,8 +148,8 @@ $config[EventBehaviorConstants::EVENT_BEHAVIOR_TRIGGERING_ACTIVE] = getenv('TEST
 $config[RabbitMqEnv::RABBITMQ_CONNECTIONS] = array_map(static function ($storeName) {
     return [
         RabbitMqEnv::RABBITMQ_CONNECTION_NAME => $storeName . '-connection',
-        RabbitMqEnv::RABBITMQ_HOST => 'localhost',
-        RabbitMqEnv::RABBITMQ_PORT => '5672',
+        RabbitMqEnv::RABBITMQ_HOST => getenv('RABBITMQ_HOST') ?: 'localhost',
+        RabbitMqEnv::RABBITMQ_PORT => getenv('RABBITMQ_PORT') ?: '5672',
         RabbitMqEnv::RABBITMQ_PASSWORD => 'guest',
         RabbitMqEnv::RABBITMQ_USERNAME => 'guest',
         RabbitMqEnv::RABBITMQ_VIRTUAL_HOST => '/',
