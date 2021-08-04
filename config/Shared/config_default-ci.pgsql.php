@@ -1,9 +1,9 @@
 <?php
 
 use Spryker\Shared\Propel\PropelConstants;
+use Spryker\Shared\SearchElasticsearch\SearchElasticsearchConstants;
 use Spryker\Shared\StorageDatabase\StorageDatabaseConfig;
 use Spryker\Shared\StorageDatabase\StorageDatabaseConstants;
-use Spryker\Shared\SearchElasticsearch\SearchElasticsearchConstants;
 use Spryker\Zed\Propel\PropelConfig;
 
 require 'config_default-ci.php';
